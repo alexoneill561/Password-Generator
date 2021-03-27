@@ -21,5 +21,16 @@ generateBtn.addEventListener("click", writePassword);
 
 
 function generatePassword(){
+  var characterLength = prompt("How many characters would you like to use in new password?");
+  var lowerCaseCharacter = prompt("Would you like to use lowercase characters in new password?");
+  var upperCaseCharacter = prompt("Would you like to use uppercase characters in your new password?");
+  var numberCharacters = prompt("Would you like to use numbers in your new password?");
+  var specialCharacters = prompt("Would you like to use special characters in new password?");
+
+  console.log(characterLength);
+  console.log(lowerCaseCharacter);
+  console.log(upperCaseCharacter);
+  console.log(numberCharacters);
+  console.log(specialCharacters);
 
 }
