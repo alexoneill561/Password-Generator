@@ -21,6 +21,9 @@ generateBtn.addEventListener("click", writePassword);
 
 
 function generatePassword(){
+  var allCharacters = [];
+  var newPassword = "";
+  
   var characterLength = prompt("How many characters would you like to use in new password? Must be between 8 and 128 charcters.");
   var lowerCaseCharacter = prompt("Would you like to use lowercase characters in new password?");
   var upperCaseCharacter = prompt("Would you like to use uppercase characters in your new password?");
@@ -33,25 +36,44 @@ function generatePassword(){
   console.log(numberCharacters);
   console.log(specialCharacters);
 
-  if (confirm("Would you like to use uppercase characters in your new password?")) {
-    select = select.concat(upperCaseArray);
-  }
-
-  if (confirm("Would you like to use lowercase characters in new password?")) {
-    select = select.concat(lowerCaseArray);
-
-  if (confirm("Would you like to use numbers in your new password?")) {
-    select = select.concat(numbersArray);
-  }
   
-  if (confirm("Would you like to use special characters in new password?")) {
-    select = select.concat(specialArray);
+
+  if(characterLength <8 || characterLength > 128){
+      alert("you are required to have between 8 and 128 charcters.");
   }
 
-  var randomPassword = [];
-  for (var i = 0; i < characterLength; i++) {
-    
-  }
+  
+  else{
+      if(confirm("Would you like to use uppercase characters in your new password?")){
+          userSelect = upperCaseArray;
+          console.log(userSelect);
+      }
+
+      if(confirm("Would you like to use lowercase characters in new password?")){
+          userSelect = lowerCaseArray;
+          console.log(userSelect);
+      }
+
+      if(confirm("Would you like to use numbers in your new password?")){
+          userSelect = numbersArray;
+          console.log(userSelect);
+      }
+
+      if(confirm("Would you like to use special characters in new password?")){
+          userSelect = specialArray;
+          console.log(userSelect);
+      }
+
+      if(allCharacters.length===0){
+          alert("you need to select at least 1 charcter to receive new password.");
+      };
+
+      var noPassword = [];
+
+      for (var i = 0; i < passwordLength; i++) {
+        var allChoices = userChoices[Math.floor(Math.random() * userChoices.length)];
+        passwordBlank.push(allChoices);
+        console.log(allChoices);
 
 }
 
